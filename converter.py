@@ -1,5 +1,4 @@
 import pandas as pd
-from pandas.io.parsers import count_empty_vals
 
 # filename : address of the excal file
 # sheetname : name of the first sheet in the excal 'classement'
@@ -19,5 +18,4 @@ def CSVToDict(filename):                    # csv ==> dictionaie
 def CSVToJSON(filename, JSONname):           # dictionary ==> JSON
     data = pd.read_csv(filename)
     data.to_json(JSONname, orient='records')
-
 
