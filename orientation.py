@@ -31,7 +31,7 @@ def getChoixOf(lesChoix, specialite):
 
 # Renvoie un dictionnaire contenant matricule de l'étudiant et la spécialisation à laquelle il a été envoyé
 def affecter(ficheVoeux, specialite):
-    choix = getChoixOf(ficheVoeux["lesChoix"], specialite)
+    choix = getChoixOf(ficheVoeux["lesChoix"], specialite) 
     etudiantData = {
         "MAT": ficheVoeux["matricule"],
         "choix": choix
