@@ -4,7 +4,7 @@ import pandas as pd
 # sheetname : name of the first sheet in the excal 'classement'
 # CSVname : output address of CSV file
 # JSONname: output address of JSON file
-
+ 
 
 def excelToCSV(filename, sheetname, CSVname):  # excel ==> csv
     data = pd.read_excel(filename, sheetname, index_col=0)
