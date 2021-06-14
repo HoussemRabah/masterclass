@@ -18,4 +18,4 @@ def CSVToDict(filename):                    # csv ==> dictionaie
 def CSVToJSON(filename, JSONname):           # dictionary ==> JSON
     data = pd.read_csv(filename)
     data.to_json(JSONname, orient='records')
-
+ 
