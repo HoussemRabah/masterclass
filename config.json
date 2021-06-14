@@ -1,0 +1,35 @@
+{
+  "classement_filename": "exemple\\classement.xlsx",
+  
+  "classement_sheetname":"classement",
+  
+  "ficheVoeux_filesnames": [
+    "exemple\\FICHE VOEUX ORIENTATION MASTER - ACAD.xlsx",
+    "exemple\\FICHE VOEUX ORIENTATION MASTER - ISIL.xlsx",
+    "exemple\\FICHE VOEUX ORIENTATION MASTER - GTR.xlsx"
+  ],
+  
+  "ficheVoeux_sheetsnames": [
+    "Feuil1",
+    "Feuil1",
+    "Feuil1"
+  ],
+  
+  "choixStartIndex":3,
+  
+  "specialites": {
+    "IL":74,
+    "SII":74,
+	"SSI":74,
+	"RSD":74,
+	"IV":74,
+	"MIND":74,
+	"HPC":74,
+	"BIOINFO":74,
+	"RT":74,
+	"ST":74
+  }
+  
+  
+  
+}
