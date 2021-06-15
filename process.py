@@ -8,8 +8,10 @@ import converter as cn
 # step 1 : load config file and excel files (classement must be sorted)
 jsontxt= loadConfig("config.json")
 config = json.loads(jsontxt)
-classement= loadClassement(config["classement_filename"], config["classement_sheetname"])
-listFicheVoeux= loadFicheVoeux(config["ficheVoeux_filesnames"], config["ficheVoeux_sheetsnames"])
+classement= loadClassement(config["classement"]["filename"], config["classement"]["sheetname"])
+listFilesOfFDV = [i["filename"] for i in config["ficheVoeux"]]
+listSheetsOfFDV = [i["sheetname"] for i in config["ficheVoeux"]]
+listFicheVoeux= loadFicheVoeux(listFilesOfFDV, listSheetsOfFDV)
     
 
 
