@@ -66,6 +66,6 @@ class Test_tableInput(unittest.TestCase):
         l=ip.sortListOfFicheVoeux(self.listFicheVoeux_correctFormat, self.listEtudiants)
         self.assertEqual(l[0]["matricule"] , 181831053795)
         self.assertEqual(l[1]["matricule"] , 181831053792)
-
+ 
 if __name__ == '__main__':
     unittest.main()
