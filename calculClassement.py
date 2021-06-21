@@ -5,7 +5,7 @@ import parser as pr
 def calculerMoy(listEtudiants, formulaire):     # ajouter column de moyen dont list etudiant
     for etudiant in listEtudiants:
        etudiant["MC"]=parseFormulaire(formulaire, etudiant)
-    
+     
     return listEtudiants
 
 def sortClassement(listEtudiants):
