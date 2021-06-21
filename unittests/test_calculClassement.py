@@ -35,7 +35,7 @@ class Test_tableCalculClassement(unittest.TestCase):
         },
     ]
   
-    formulaire={
+    formule={
         "form":"$1$*(1-$2$*($3$+$4$/2+$5$/4))",
         "1":"MSE",
         "2":"a",
@@ -52,7 +52,7 @@ class Test_tableCalculClassement(unittest.TestCase):
         "s":0
     }
     def test_calculerMoy(self):
-        newlist=cl.calculerMoy(self.listEtudiant, self.formulaire)
+        newlist=cl.calculerMoy(self.listEtudiant, self.formule)
         self.assertEqual(newlist[0]["MC"] , 10.0)
 
 
@@ -61,7 +61,7 @@ class Test_tableCalculClassement(unittest.TestCase):
         self.assertEqual(newlist[0]["MAT"] , 2)
 
     def test_parseFormulaire(self):
-        self.assertEqual(cl.parseFormulaire(self.formulaire, self.dict ), 10)
+        self.assertEqual(cl.parseFormule(self.formule, self.dict ), 10)
 
 if __name__ == '__main__':
     unittest.main()
