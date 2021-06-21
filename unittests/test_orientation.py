@@ -34,7 +34,7 @@ class Test_tableOrientation(unittest.TestCase):
     def test_affecter(self):
         etd = affecter(self.listFicheVoeux[0], self.specialite)
         self.assertEqual(etd["choix"] , "il")
-
+ 
 
 if __name__ == '__main__':
     unittest.main()
