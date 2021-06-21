@@ -3,8 +3,8 @@ import pandas as pd
 # filename : address of the excal file
 # sheetname : name of the first sheet in the excal 'classement'
 # CSVname : output address of CSV file
-# JSONname: output address of JSON file
- 
+# JSONname: output address of JSON file 
+
 
 def excelToCSV(filename, sheetname, CSVname):  # excel ==> csv
     data = pd.read_excel(filename, sheetname, index_col=0)
@@ -18,4 +18,7 @@ def CSVToDict(filename):                    # csv ==> dictionaie
 def CSVToJSON(filename, JSONname):           # dictionary ==> JSON
     data = pd.read_csv(filename)
     data.to_json(JSONname, orient='records')
- 
+
+def dictToExcel(dict, outputFilename):      # dictionary ==> excel
+    df = pd.DataFrame.from_dict(dict)
+    df.to_excel(outputFilename)
