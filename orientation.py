@@ -1,16 +1,4 @@
 import pandas as pn
- 
-
-specialite = {
-    "il": 1,
-    "rsd": 2, 
-    "sii": 2,
-    "ssi": 1,
-    "mind": 1,
-    "iv": 2, 
-    "bio-info": 1
-}
-
 
 
 
@@ -31,10 +19,14 @@ def getChoixOf(lesChoix, specialite):
 
 # Renvoie un dictionnaire contenant matricule de l'étudiant et la spécialisation à laquelle il a été envoyé
 def affecter(ficheVoeux, specialite):
-    choix = getChoixOf(ficheVoeux["lesChoix"], specialite) 
+    choix = getChoixOf(ficheVoeux["lesChoix"], specialite)
     etudiantData = {
         "MAT": ficheVoeux["matricule"],
         "choix": choix
     }
     return etudiantData
 
+def mergeTwoDict(dict1, dict2, sameKey):
+    dict1.extend(list(map(lambda x,y: y if x.get(sameKey) != y.get(sameKey) else x.update(y), dict1, dict2)))
+    dict1 = list(filter(None, dict1))
+    return dict1
