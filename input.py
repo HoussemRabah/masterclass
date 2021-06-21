@@ -10,7 +10,7 @@ def loadConfig(filename):
     return f.read()
 
 # input the excel file of "classement" as a list of dictionary 'classement must be sorted'
-def loadClassement(filename, sheetname):
+def loadFile(filename, sheetname):
     cn.excelToCSV(filename, sheetname, "\\temp.csv")
     return cn.CSVToDict("\\temp.csv")
 
