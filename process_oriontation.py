@@ -1,6 +1,6 @@
 from numpy import append, mat
-from orientation import affecter , getChoixOf
-from input import createListOfChoix, loadClassement, loadConfig , loadFicheVoeux , createListOfFicheVoeux, sortListOfFicheVoeux
+from orientation import affecter , getChoixOf, mergeTwoDict
+from input import createListOfChoix, loadFile, loadConfig , loadFicheVoeux , createListOfFicheVoeux, sortListOfFicheVoeux
 import json
 import converter as cn
 
@@ -8,7 +8,7 @@ import converter as cn
 # step 1 : load config file and excel files (classement must be sorted)
 jsontxt= loadConfig("config.json")
 config = json.loads(jsontxt)
-classement= loadClassement(config["classement"]["filename"], config["classement"]["sheetname"])
+classement= loadFile(config["classement"]["filename"], config["classement"]["sheetname"])
 listFilesOfFDV = [i["filename"] for i in config["ficheVoeux"]]
 listSheetsOfFDV = [i["sheetname"] for i in config["ficheVoeux"]]
 listFicheVoeux= loadFicheVoeux(listFilesOfFDV, listSheetsOfFDV)
@@ -39,5 +39,5 @@ if(everythingGood):
         specialite[choix]=specialite[choix]-1
     
     # step 5 : output
-    print(str(classementFinal).replace("},","}\n"))
-    
+    classementFinal=mergeTwoDict(classementFinal, classement, "MAT")
+    cn.dictToExcel(classementFinal, config["output"]["orientation"])
