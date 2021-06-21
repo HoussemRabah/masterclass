@@ -5,28 +5,21 @@
   },
   
   "classement": {
-    "filename": "exemple\\classement.xlsx",
-    "sheetname": "classement"
+    "filename": "output_classement.xlsx",
+    "sheetname": "Sheet1"
   },
   
   "ficheVoeux": [
     {
-      "filename": "exemple\\FICHE VOEUX ORIENTATION MASTER - ACAD.xlsx",
-      "sheetname": "Feuil1"
-    },
-    {
-      "filename": "exemple\\FICHE VOEUX ORIENTATION MASTER - ISIL.xlsx",
-      "sheetname": "Feuil1"
-    },
-    {
-      "filename": "exemple\\FICHE VOEUX ORIENTATION MASTER - GTR.xlsx",
+      "filename": "exemple\\FICHE VOEUX ORIENTATION MASTER - ACAD m.xlsx",
       "sheetname": "Feuil1"
     }
+  
   ],
   
   "choixStartIndex": 3,
   
-  "formulaire" :{
+  "formule" :{
 		"form":"(($1$+$2$+$3$+$4$+$5$+$6$)/6)*(1-$7$*($8$+$9$/2+$10$/4))",
 		"1":"S1", 
 		"2":"S2",
@@ -35,9 +28,9 @@
 		"5":"S5",
 		"6":"S6",
 		"7":"a",
-        "8":"r",
-        "9":"d",
-        "10":"s"
+    "8":"r",
+    "9":"d",
+    "10":"s"
   },
   
   "specialites": {
@@ -54,7 +47,7 @@
   },
   
   "output":{
-	"classement":"output_classement.xlsx", 
+	"classement":"output_classement.xlsx",
 	"orientation":"output_orientation.xlsx"
 }
 
