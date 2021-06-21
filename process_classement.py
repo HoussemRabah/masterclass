@@ -13,7 +13,7 @@ config = json.loads(jsontxt)
 listEtudiant = loadFile(config["listEtudiants"]["filename"], config["listEtudiants"]["sheetname"])
 
 # preparer classement
-listEtudiant = cc.calculerMoy(listEtudiant, config["formulaire"])
+listEtudiant = cc.calculerMoy(listEtudiant, config["formule"])
 listEtudiant = cc.sortClassement(listEtudiant)
 
 # output classement
