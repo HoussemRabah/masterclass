@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>MasterClassUI.Program</StartupObject>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ILMerge" Version="3.0.41" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <!-- Code to merge the assemblies into one:setup.exe -->
+  <UsingTask TaskName="ILMerge.MSBuild.Tasks.ILMerge" AssemblyFile="$(SolutionDir)\packages\ILMerge.MSBuild.Tasks.1.0.0.3\tools\ILMerge.MSBuild.Tasks.dll" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <MergeAsm Include="$(OutputPath)$(TargetFileName)" />
+      <MergeAsm Include="$(OutputPath)LIB1_To_MERGE.dll" />
+      <MergeAsm Include="$(OutputPath)LIB2_To_MERGE.dll" />
+    </ItemGroup>
+    <PropertyGroup>
+      <MergedAssembly>$(ProjectDir)$(OutDir)MERGED_ASSEMBLY_NAME.exe</MergedAssembly>
+    </PropertyGroup>
+    <Message Text="ILMerge @(MergeAsm) -&gt; $(MergedAssembly)" Importance="high" />
+    <ILMerge InputAssemblies="@(MergeAsm)" OutputFile="$(MergedAssembly)" TargetKind="SameAsPrimaryAssembly" />
+  </Target>  
+</Project>
