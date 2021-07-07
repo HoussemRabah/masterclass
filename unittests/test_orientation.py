@@ -23,7 +23,7 @@ class Test_tableOrientation(unittest.TestCase):
     "rsd": 2,
     "sii": 2,
     "ssi": 1, 
-    "mind": 1,
+    "mind": 2,
     "iv": 2,
     "bio-info": 1}
 
