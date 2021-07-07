@@ -19,7 +19,7 @@ class Test_tableOrientation(unittest.TestCase):
     })
 
     specialite = {
-    "il": 4,   
+    "il": 0,   
     "rsd": 2,
     "sii": 2,
     "ssi": 1, 
@@ -28,12 +28,12 @@ class Test_tableOrientation(unittest.TestCase):
     "bio-info": 1}
 
     def test_getChoixOf(self):
-        self.assertEqual(getChoixOf(self.listFicheVoeux[0]["lesChoix"], self.specialite), "il")
+        self.assertEqual(getChoixOf(self.listFicheVoeux[0]["lesChoix"], self.specialite), "mind")
 
 
     def test_affecter(self):
-        etd = affecter(self.listFicheVoeux[0], self.specialite)
-        self.assertEqual(etd["choix"] , "il")
+        etd = affecter(self.listFicheVoeux[1], self.specialite)
+        self.assertEqual(etd["choix"] , "mind")
  
 
 if __name__ == '__main__':
