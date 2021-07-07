@@ -23,7 +23,7 @@ class Test_tableOrientation(unittest.TestCase):
     "rsd": 2,
     "sii": 2,
     "ssi": 1, 
-    "mind": 2,
+    "mind": 1,
     "iv": 2,
     "bio-info": 1}
 
@@ -32,8 +32,10 @@ class Test_tableOrientation(unittest.TestCase):
 
 
     def test_affecter(self):
-        etd = affecter(self.listFicheVoeux[1], self.specialite)
+        etd = affecter(self.listFicheVoeux[0], self.specialite)
+        etd2 = affecter(self.listFicheVoeux[1], self.specialite)
         self.assertEqual(etd["choix"] , "mind")
+        self.assertEqual(etd2["choix"] , "sii")
  
 
 if __name__ == '__main__':
